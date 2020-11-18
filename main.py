@@ -72,8 +72,8 @@ for antidep in antideps.keys():
 	scores.append((data.label.value_counts(normalize=True) * 100)[1])
 	print('\nPercent Positive:', scores[-1], '\n')
 
-fig, ax = plt.subplots(figsize=(20, 10), dpi=40)
+fig, ax = plt.subplots(figsize=(10, 10))
 sns.barplot(x=np.array(list(antideps.keys())), y=np.array(scores), ax=ax)
-ax.set_xticklabels(np.array(list(antideps.keys())))
+ax.set_xticklabels(np.array(list(antideps.keys())), rotation='vertical')
 ax.set_ylabel("Percent Positive")
 plt.show()
